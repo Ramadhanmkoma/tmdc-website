@@ -29,7 +29,7 @@ const MissionObjectives = () => {
         }
     ];
     return (
-        <section className="text-gray-600 body-font">
+        <section className="text-primary body-font">
             <h1 className='text-center text-4xl pt-10' style={{ fontWeight: '600' }}>Our Mission & Objectives</h1>
             <div className="container px-5 py-14 mx-auto flex flex-wrap">
 
