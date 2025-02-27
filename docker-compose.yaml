@@ -1,0 +1,18 @@
+version: '3'
+services:
+  react-app:
+    # image: react-app:latest
+    container_name: tmdc-website
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:80"  # Map port 4200 on host to port 80 in the container
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: network
