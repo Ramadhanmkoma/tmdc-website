@@ -61,7 +61,7 @@ Tanzania Muslims Developers Community (TMDC) is a collaborative platform for Mus
 
 - Dedicated pages for each project.
 - Blog section to share updates and articles.
-- Arabic/Swahili translations toggle.
+- English/Swahili translations toggle.
 - Admin dashboard to manage content (long-term).
 
 ---
