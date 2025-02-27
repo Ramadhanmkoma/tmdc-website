@@ -39,7 +39,7 @@ Tanzania Muslims Developers Community (TMDC) is a collaborative platform for Mus
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/tmdc-website.git
+    git clone https://github.com/Ramadhanmkoma/tmdc-website.git
     ```
 2. Navigate into the project directory:
     ```bash
