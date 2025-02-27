@@ -8,3 +8,19 @@ html {
 body {
     font-family: 'Poppins';
 }
+
+.bg-primary {
+    background-color: #204371;
+}
+
+.bg-secondary {
+    background-color: #38b5fe;
+}
+
+.text-primary {
+    color: #204371;
+}
+
+.text-secondary {
+    color: #38b5fe;
+}
