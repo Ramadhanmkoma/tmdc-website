@@ -17,7 +17,9 @@ const JoinUs = () => {
         <div id='join' className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
             
             <img
-                alt=""
+                alt="Tanzania Muslims Developer's Community Banner"
+                width={800}
+                height={400}
                 src={banner}
                 className="absolute inset-0 -z-10 size-full object-cover object-right md:object-center"
             />
