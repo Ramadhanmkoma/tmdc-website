@@ -5,7 +5,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="text-primary bg-blue-200 body-font">
+        <footer className="text-primary bg-blue-200/20 backdrop-blur-3xl body-font">
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                 <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
                     <img src="/assets/images/community-log.png" alt="Tanzania Muslims Developer Community" width={30} />
