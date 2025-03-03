@@ -2,35 +2,103 @@
 @import "tailwindcss";
 
 * {
-    scroll-behavior: smooth;
-    box-sizing: border-box;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 html {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 body {
-    font-family: 'Poppins';
+  font-family: "Poppins";
+}
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #204371, #38b5fe);
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  backdrop-filter: blur(8px);
+}
+
+/* Optional: Handle Hover Effect */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #38b5fe, #204371);
+}
+
+/* For Firefox (limited support for scrollbar styling) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #204371 transparent; /* thumb color and track color */
+}
+
+/* Text Highlight theme color */
+::-moz-selection {
+  background: #204371;
+  color: #fff;
+}
+::selection {
+  background: #204371;
+  color: #fff;
+}
+
+/* For IE and Edge */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #204371 transparent; /* thumb color and track color */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #204371 transparent; /* thumb color and track color */
+}
+
+/* For IE and Edge */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #204371 transparent; /* thumb color and track color */
 }
 
 .bg-primary {
-    background-color: #204371;
+  background-color: #204371;
 }
 
 .bg-secondary {
-    background-color: #38b5fe;
+  background-color: #38b5fe;
 }
 
 .text-primary {
-    color: #204371;
+  color: #204371;
 }
 
 .text-secondary {
-    color: #38b5fe;
+  color: #38b5fe;
 }
 
 :is(a, button):hover {
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
+
+.language-dart {
+  color: #fff;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+
+
