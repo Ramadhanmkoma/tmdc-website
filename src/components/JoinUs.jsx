@@ -4,8 +4,6 @@ import banner from '/assets/images/tmdc-banner-miin.png';
 const links = [
     { name: 'Open Source Projects', href: '#' },
     { name: 'TMDC Community', href: '#' },
-    // { name: 'Our values', href: '#' },
-    // { name: 'Meet our leadership', href: '#' },
 ]
 const stats = [
     { name: 'Developers', value: '12' },

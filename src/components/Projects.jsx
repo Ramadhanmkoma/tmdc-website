@@ -24,43 +24,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    // <section id="projects" className="bg-blue-50 py-16 px-6 md:px-12">
-    //   <div className="max-w-7xl mx-auto text-center">
-    //     <h2 className="text-3xl md:text-4xl font-bold text-secondary">
-    //       Our Projects
-    //     </h2>
-    //     <p className="text-primary mt-4 max-w-3xl mx-auto text-lg">
-    //       We develop and contribute to Islamic tech projects to **empower the Ummah**.  
-    //     </p>
-
-    //     {/* Project Cards */}
-    //     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-    //       {projects.map((project, index) => (
-    //         <div key={index} className="bg-white rounded-4xl shadow-lg overflow-hidden">
-    //           <img
-    //             src={project.image}
-    //             alt={project.title}
-    //             className="w-full h-40 object-cover"
-    //           />
-    //           <div className="p-6">
-    //             <h3 className="text-xl font-semibold text-secondary">
-    //               {project.title}
-    //             </h3>
-    //             <p className="text-primary mt-2">{project.description}</p>
-    //             <a
-    //               href={project.link}
-    //               target="_blank"
-    //               className="mt-4 inline-block text-white bg-primary px-4 py-2 rounded-lg hover:bg-blue-900 transition duration-300"
-    //             >
-    //               {project.link === "#" ? "Coming Soon" : "View Project"}
-    //             </a>
-    //           </div>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </section>
-    <div className="bg-gray-50 py-24 sm:py-32">
+    <div id="projects" className="bg-gray-50 py-24 sm:py-32">
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-center text-base/7 font-semibold text-indigo-600">Introducing</h2>
         <p className="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-tight text-balance text-gray-950 sm:text-5xl">
