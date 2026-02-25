@@ -13,7 +13,7 @@ const navigation = [
 ];
 
 // Pages with dark hero backgrounds where white text is readable
-const darkHeroPages = ['/', '/apps', '/projects'];
+const darkHeroPages = ['/apps', '/projects'];
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
