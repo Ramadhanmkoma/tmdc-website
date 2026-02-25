@@ -12,10 +12,16 @@ const navigation = [
     { name: 'Contact', href: '/#contact', isRoute: false },
 ];
 
+// Pages with dark hero backgrounds where white text is readable
+const darkHeroPages = ['/', '/apps', '/projects'];
+
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+
+    // Check if current page has a dark hero
+    const hasDarkHero = darkHeroPages.includes(location.pathname);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,13 +36,18 @@ const Header = () => {
         return location.pathname.startsWith(href);
     };
 
+    // Determine if we should use light text (white) or dark text
+    const useLightText = hasDarkHero && !scrolled;
+
     return (
         <>
             <header 
                 className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
                     scrolled 
                         ? 'bg-white/95 backdrop-blur-md shadow-sm' 
-                        : 'bg-transparent'
+                        : hasDarkHero 
+                            ? 'bg-transparent'
+                            : 'bg-white/95 backdrop-blur-md shadow-sm'
                 }`}
             >
                 <nav aria-label="Global" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -45,7 +56,7 @@ const Header = () => {
                         <div className="flex-shrink-0">
                             <Link to="/" className="flex items-center gap-2.5 group">
                                 <div className={`relative p-1.5 rounded-xl transition-all duration-300 ${
-                                    scrolled ? 'bg-gray-100' : 'bg-white/10'
+                                    useLightText ? 'bg-white/10' : 'bg-gray-100'
                                 }`}>
                                     <img
                                         alt="TMDC Logo"
@@ -54,7 +65,7 @@ const Header = () => {
                                     />
                                 </div>
                                 <span className={`font-bold text-lg tracking-tight transition-colors duration-300 ${
-                                    scrolled ? 'text-gray-900' : 'text-white'
+                                    useLightText ? 'text-white' : 'text-gray-900'
                                 }`}>
                                     TMDC
                                 </span>
@@ -71,18 +82,18 @@ const Header = () => {
                                         to={item.href}
                                         className={`relative px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
                                             active
-                                                ? scrolled 
-                                                    ? 'text-primary bg-blue-50' 
-                                                    : 'text-white bg-white/20'
-                                                : scrolled 
-                                                    ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' 
-                                                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                                                ? useLightText 
+                                                    ? 'text-white bg-white/20' 
+                                                    : 'text-primary bg-blue-50'
+                                                : useLightText 
+                                                    ? 'text-white/80 hover:text-white hover:bg-white/10' 
+                                                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                                         }`}
                                     >
                                         {item.name}
                                         {active && (
                                             <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${
-                                                scrolled ? 'bg-primary' : 'bg-white'
+                                                useLightText ? 'bg-white' : 'bg-primary'
                                             }`} />
                                         )}
                                     </Link>
@@ -91,9 +102,9 @@ const Header = () => {
                                         key={item.name}
                                         href={item.href}
                                         className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 ${
-                                            scrolled 
-                                                ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' 
-                                                : 'text-white/80 hover:text-white hover:bg-white/10'
+                                            useLightText 
+                                                ? 'text-white/80 hover:text-white hover:bg-white/10' 
+                                                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                                         }`}
                                     >
                                         {item.name}
@@ -107,9 +118,9 @@ const Header = () => {
                             <a 
                                 href="/#join" 
                                 className={`inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-full transition-all duration-300 ${
-                                    scrolled 
-                                        ? 'bg-gray-900 text-white hover:bg-black' 
-                                        : 'bg-white text-gray-900 hover:bg-gray-100'
+                                    useLightText 
+                                        ? 'bg-white text-gray-900 hover:bg-gray-100' 
+                                        : 'bg-gray-900 text-white hover:bg-black'
                                 }`}
                             >
                                 Join Us
@@ -125,9 +136,9 @@ const Header = () => {
                                 type="button"
                                 onClick={() => setMobileMenuOpen(true)}
                                 className={`p-2.5 rounded-full transition-colors ${
-                                    scrolled 
-                                        ? 'text-gray-700 hover:bg-gray-100' 
-                                        : 'text-white hover:bg-white/10'
+                                    useLightText 
+                                        ? 'text-white hover:bg-white/10' 
+                                        : 'text-gray-700 hover:bg-gray-100'
                                 }`}
                             >
                                 <span className="sr-only">Open main menu</span>

@@ -93,7 +93,7 @@ const techStack = [
   { name: "Supabase", icon: SiSupabase, color: "bg-emerald-500", description: "Open Source Backend" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "bg-cyan-400", description: "Modern Styling" },
   { name: "TypeScript", icon: SiTypescript, color: "bg-blue-600", description: "Type-safe JavaScript" },
-  { name: "Kotlin", icon: SiKotlin, color: "bg-purple-500", description: "Android Development" },
+//   { name: "Kotlin", icon: SiKotlin, color: "bg-purple-500", description: "Android Development" },
   { name: "Java", icon: FaJava, color: "bg-orange-500", description: "Enterprise Solutions" },
 ];
 
