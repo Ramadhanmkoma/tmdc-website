@@ -1,46 +1,98 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaGithub, FaTwitter, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+
+const footerNavigation = {
+    main: [
+        { name: 'Home', href: '/' },
+        { name: 'About', href: '/about' },
+        { name: 'Apps', href: '/apps' },
+        { name: 'Projects', href: '/projects' },
+    ],
+    social: [
+        { name: 'WhatsApp', href: 'https://wa.me/255766570255', icon: FaWhatsapp },
+        { name: 'GitHub', href: '#', icon: FaGithub },
+        { name: 'Twitter', href: '#', icon: FaTwitter },
+        { name: 'Instagram', href: '#', icon: FaInstagram },
+        { name: 'LinkedIn', href: '#', icon: FaLinkedin },
+    ],
+};
 
 const Footer = () => {
-
     const year = new Date().getFullYear();
 
     return (
-        <footer className="text-primary bg-blue-200/20 backdrop-blur-3xl body-font">
-            <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-                <a href='#' className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-                    <img src="/assets/images/community-log.png" alt="Tanzania Muslims Developer Community" width={30} />
-                    <span className="ml-3 text-xl">TMDC</span>
-                </a>
-                <p className="text-sm text-primary sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© {year} Tanzania Muslims Developer Community —
-                    <a href='#' className="text-primary ml-1" rel="noopener noreferrer" target="_blank">@tmdc</a>
-                </p>
-                <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                    <a href='#' className="text-primary">
-                        <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                        </svg>
+        <footer className="bg-gray-900">
+            <div className="mx-auto max-w-7xl overflow-hidden px-6 py-16 sm:py-20 lg:px-8">
+                {/* Logo & Description */}
+                <div className="flex flex-col items-center mb-10">
+                    <Link to="/" className="flex items-center gap-3">
+                        <img 
+                            src="/assets/images/community-log.png" 
+                            alt="TMDC Logo" 
+                            className="h-10 w-auto"
+                        />
+                        <span className="text-xl font-bold text-white">TMDC</span>
+                    </Link>
+                    <p className="mt-4 text-center text-sm text-gray-400 max-w-md">
+                        Tanzania Muslims Developer Community - Building innovative tech solutions 
+                        that serve the Muslim Ummah worldwide.
+                    </p>
+                </div>
+
+                {/* Navigation Links */}
+                <nav className="mb-10 flex flex-wrap justify-center gap-x-8 gap-y-3" aria-label="Footer">
+                    {footerNavigation.main.map((item) => (
+                        <Link
+                            key={item.name}
+                            to={item.href}
+                            className="text-sm leading-6 text-gray-400 hover:text-white transition-colors"
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                    <a
+                        href="/#contact"
+                        className="text-sm leading-6 text-gray-400 hover:text-white transition-colors"
+                    >
+                        Contact
                     </a>
-                    <a href='#' className="ml-3 text-primary">
-                        <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                        </svg>
+                    <a
+                        href="/#join"
+                        className="text-sm leading-6 text-gray-400 hover:text-white transition-colors"
+                    >
+                        Join Us
                     </a>
-                    <a href='#' className="ml-3 text-primary">
-                        <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-                        </svg>
-                    </a>
-                    <a href='#' className="ml-3 text-primary">
-                        <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0" className="w-5 h-5" viewBox="0 0 24 24">
-                            <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
-                        </svg>
-                    </a>
-                </span>
+                </nav>
+
+                {/* Social Links */}
+                <div className="flex justify-center gap-x-6 mb-10">
+                    {footerNavigation.social.map((item) => (
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-500 hover:text-secondary transition-colors"
+                        >
+                            <span className="sr-only">{item.name}</span>
+                            <item.icon className="h-6 w-6" aria-hidden="true" />
+                        </a>
+                    ))}
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-gray-800 pt-8">
+                    <p className="text-center text-xs leading-5 text-gray-500">
+                        &copy; {year} Tanzania Muslims Developer Community. All rights reserved.
+                    </p>
+                    <p className="text-center text-xs leading-5 text-gray-600 mt-2">
+                        Made with ❤️ for the Ummah
+                    </p>
+                </div>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;

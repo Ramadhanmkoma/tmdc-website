@@ -1,80 +1,85 @@
 import React from 'react';
-import banner from '/assets/images/tmdc-banner-miin.png';
+import { Link } from 'react-router-dom';
+import { CodeBracketIcon, UserGroupIcon, RocketLaunchIcon, HeartIcon } from '@heroicons/react/24/outline';
 
-const links = [
-    { name: 'Open Source Projects', href: '#' },
-    { name: 'TMDC Community', href: '#' },
-]
 const stats = [
-    { name: 'Developers', value: '12' },
-    { name: 'Sponsors', value: '3' },
-    { name: 'Software Architect', value: '2' },
-    { name: 'Members', value: '19' },
+    { name: 'Developers', value: '12', icon: CodeBracketIcon },
+    { name: 'Sponsors', value: '3', icon: HeartIcon },
+    { name: 'Software Architects', value: '2', icon: RocketLaunchIcon },
+    { name: 'Members', value: '19', icon: UserGroupIcon },
 ]
 
 const JoinUs = () => {
     return (
-        <div id='join' className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
-            
-            <img
-                alt="Tanzania Muslims Developer's Community Banner"
-                width={800}
-                height={400}
-                src={banner}
-                className="absolute inset-0 -z-10 size-full object-cover object-right md:object-center"
-            />
-            <div
-                aria-hidden="true"
-                className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
-            >
-                <div
-                    style={{
-                        clipPath:
-                            'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                    }}
-                    className="aspect-1097/845 w-[68.5625rem] bg-linear-to-tr from-[#38b5fe] to-[#204371] opacity-20"
-                />
-            </div>
-            <div
-                aria-hidden="true"
-                className="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
-            >
-                <div
-                    style={{
-                        clipPath:
-                            'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-                    }}
-                    className="aspect-1097/845 w-[68.5625rem] bg-linear-to-tr from-[#38b5fe] to-[#204371] opacity-20"
-                />
-            </div>
+        <section id='join' className="bg-gray-900 py-20 sm:py-28">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:mx-0">
-                    <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Work with us</h2>
-                    <p className="mt-8 text-lg font-medium text-pretty text-gray-300 sm:text-xl/8">
-                    We aim to develop innovative technological solutions that benefit the Muslim community in Tanzania & globally, while upholding the values of faith, unity, and progress.
+                {/* Header */}
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <p className="text-secondary font-semibold text-sm uppercase tracking-wider mb-3">Join Our Community</p>
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+                        Work With Us
+                    </h2>
+                    <p className="mt-6 text-lg text-gray-400 leading-relaxed">
+                        We aim to develop innovative technological solutions that benefit the Muslim community 
+                        in Tanzania & globally, while upholding the values of faith, unity, and progress.
                     </p>
                 </div>
-                <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-                    <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base/7 font-semibold text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-                        {links.map((link) => (
-                            <a key={link.name} href={link.href}>
-                                {link.name} <span aria-hidden="true">&rarr;</span>
-                            </a>
-                        ))}
-                    </div>
-                    <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-                        {stats.map((stat) => (
-                            <div key={stat.name} className="flex flex-col-reverse gap-1">
-                                <dt className="text-base/7 text-gray-300">{stat.name}</dt>
-                                <dd className="text-4xl font-semibold tracking-tight text-white">{stat.value}</dd>
+
+                {/* Stats Grid */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    {stats.map((stat) => (
+                        <div 
+                            key={stat.name} 
+                            className="relative group bg-gray-800/50 rounded-2xl p-6 sm:p-8 text-center hover:bg-gray-800 transition-colors border border-gray-800 hover:border-secondary/30"
+                        >
+                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-secondary/10 mb-4">
+                                <stat.icon className="h-6 w-6 text-secondary" />
                             </div>
-                        ))}
-                    </dl>
+                            <div className="text-3xl sm:text-4xl font-bold text-white mb-2">{stat.value}</div>
+                            <div className="text-sm text-gray-400">{stat.name}</div>
+                        </div>
+                    ))}
                 </div>
-                
+
+                {/* CTA Section */}
+                <div className="bg-gradient-to-r from-gray-800/50 to-gray-800/30 rounded-3xl p-8 sm:p-12 border border-gray-800">
+                    <div className="grid lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                                Ready to Make an Impact?
+                            </h3>
+                            <p className="text-gray-400 leading-relaxed">
+                                Join a community of passionate Muslim developers working together to create 
+                                meaningful technology solutions. Whether you're a beginner or experienced, 
+                                there's a place for you here.
+                            </p>
+                        </div>
+                        <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
+                            <a 
+                                href="https://github.com/tmdc-tz" 
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-gray-900 font-semibold hover:bg-gray-100 transition-colors"
+                            >
+                                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                                </svg>
+                                View on GitHub
+                            </a>
+                            <Link 
+                                to="/about"
+                                className="inline-flex items-center justify-center gap-2 rounded-xl bg-secondary/10 border border-secondary/30 px-6 py-3.5 text-secondary font-semibold hover:bg-secondary/20 transition-colors"
+                            >
+                                Learn More
+                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="absolute w-full h-full top-0 -z-10 bg-black/50" style={{ backdropFilter: 'blur(5px)' }} ></div>
-        </div>
+        </section>
     )
 }
 

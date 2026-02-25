@@ -100,5 +100,118 @@ body {
   display: inline-block;
 }
 
+/* Swiper Custom Styles */
+.swiper {
+  width: 100%;
+  padding-bottom: 50px !important;
+}
+
+.swiper-pagination-bullet {
+  background-color: #204371;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #204371;
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #204371 !important;
+  background: white;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.swiper-button-disabled {
+  opacity: 0.35 !important;
+}
+
+/* App Showcase Swiper */
+.app-showcase-swiper .swiper-pagination-bullet {
+  background-color: white;
+  opacity: 0.5;
+}
+
+.app-showcase-swiper .swiper-pagination-bullet-active {
+  background-color: white;
+  opacity: 1;
+}
+
+.app-showcase-swiper,
+.app-showcase-swiper .swiper-wrapper,
+.app-showcase-swiper .swiper-slide {
+  height: 100% !important;
+}
+
+.app-showcase-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Hero Phone Swiper */
+.swiper-slide {
+  height: 100%;
+}
+
+.swiper-slide img {
+  height: 100%;
+}
+
+/* Apps Swiper */
+.apps-swiper .swiper-slide {
+  height: auto;
+}
+
+.apps-swiper .swiper-button-next,
+.apps-swiper .swiper-button-prev {
+  top: 40%;
+}
+
+/* Projects Swiper */
+.projects-swiper .swiper-slide {
+  height: auto;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Animation for floating elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
 
 

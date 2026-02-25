@@ -1,12 +1,13 @@
 import React from "react";
-import mockup from '/assets/images/bustani-mockup.png';
+
+const bustaniScreenshot = "https://res.cloudinary.com/dtibkhud5/image/upload/v1772024792/Screenshot_20260203_194456_rcrofj.jpg";
 
 const projects = [
   {
     title: "Bustani ya Hadith",
     description: "An app providing authentic Hadith collections with audio support in Arabic language.",
     link: "https://bustani.gohimma.xyz/",
-    image: "/assets/images/bustani-dark.png",
+    image: "https://res.cloudinary.com/dtibkhud5/image/upload/v1772024785/Screenshot_20260203_193642_qqvne0.jpg",
   },
   {
     title: "Darsa Audio App (Upcoming)",
@@ -66,8 +67,8 @@ const Projects = () => {
               <div className="flex flex-1 items-center justify-center">
                 <img
                   className="w-full max-lg:max-w-xs"
-                  src={mockup}
-                  alt=""
+                  src={bustaniScreenshot}
+                  alt="Bustani ya Hadith App"
                   style={{
                     scale: "1.4",
                     transformOrigin: "center center",

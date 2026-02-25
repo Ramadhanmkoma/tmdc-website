@@ -1,33 +1,25 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
-// import MissionObjectives from "./components/MissionObjectives";
-
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Hero from "./components/Hero";
-import JoinUs from "./components/JoinUs";
-import Projects from "./components/Projects";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import AppsPage from "./pages/AppsPage";
+import ProjectsPage from "./pages/ProjectsPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
-
-
   return (
     <>
-      <Hero />
-
-      <About />
-
-      {/* <MissionObjectives /> */}
-
-      <Projects />
-
-      <JoinUs />
-
-      <Contact />
-      
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/apps" element={<AppsPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
